@@ -30,7 +30,11 @@ This command creates a new conda environment called `yac_assembly`, downloads an
 
 ```bash
 cd ./yac_assembly
+```
+```bash
 conda activate
+```
+```bash
 conda env create -f environment.yml
 ```
 
