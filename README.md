@@ -37,6 +37,7 @@ conda env create -f environment.yml
 ### 4. install [weeSAM](https://github.com/centre-for-virus-research/weeSAM)
 
 weeSAM is a bioinformatic tool that provides you some basic statistics (number of reads mapped to the reference sequence, coverage, depth, etc.).
+It creates `_html_results` folder with html and svg files. 
 
 ```bash
 git clone https://github.com/centre-for-virus-research/weeSAM.git 
