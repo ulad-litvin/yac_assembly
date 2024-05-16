@@ -1,5 +1,5 @@
 # yac_assembly
-Reference-guided assembly of sequencing results from YAC DNA extractions (and more).
+Reference-guided assembly of sequencing results from YAC DNA extractions.
 
 ## installation procedure
 
