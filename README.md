@@ -1,12 +1,12 @@
 # yac_assembly
-Reference assembly of sequencing results from YAC DNA extraction
+Reference-guided assembly of sequencing results from YAC DNA extractions (and more).
 
 ## installation procedure
 
 ### 1. install Miniconda
 
 Miniconda is a package manager that helps you to download and install different bioinformatic tools.
-Instructions on how to install Miniconda can be found here https://docs.anaconda.com/free/miniconda/ .
+Instructions on how to install Miniconda on your computer can be found here https://docs.anaconda.com/free/miniconda/ .
 
 ### 2. clone this repository
 
