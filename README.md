@@ -49,8 +49,8 @@ conda activate yac_assembly
 ### 2. make folders with reference sequence and raw reads
 
 Inside the `yac_assembly` folder make two additional folder:
-- a folder for the reference seqence (eg. `reference`). It should contain a single file of your reference sequence in the FASTA format (eg. `yac_a_ref.fasta`).
-- a folder with one or more raw reads files (eg. `raw_reads`). It should contain all FASTQ files that you want to align to the reference sequence (eg. `yac_a_sample1.fast1`, `yac_a_sample2.fastq`, etc.).
+- a folder for the reference seqence (eg. `reference`). It should contain a single file of your reference sequence in the FASTA format (eg. `yac-a_ref.fasta`).
+- a folder with one or more raw reads files (eg. `raw_reads`). It should contain all FASTQ files that you want to align to the reference sequence (eg. `yac-a_sample1.fast1`, `yac_a_sample2.fastq`, etc.).
 
 ### 3. run `ref_assembly.py` script
 
