@@ -125,9 +125,8 @@ for sample_name, sample_path_no_ext in samples_dict.items():
     subprocess.Popen([cmd], shell = True,close_fds=True).wait()
 
     # make coverage plots using weeSAM
-    cmd = f"./bin/weeSAM/weeSAM --bam {sample_path_no_ext}.bam --html {sample_path_no_ext}"
+    cmd = f"./weeSAM/weeSAM --bam {sample_path_no_ext}.bam --html {sample_path_no_ext}"
     subprocess.Popen([cmd], shell = True,close_fds=True).wait()
 
     # move consensus files to the output folder
     shutil.move(f"{sample_path_no_ext}_con.fa", output_folder)
-
