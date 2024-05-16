@@ -17,14 +17,13 @@ git clone https://github.com/ulad-litvin/yac_assembly.git
 ```
 
 It contains:
-- `ref_assembly.py`: python script that does the reference assembly;
-- [weeSAM tool](https://github.com/centre-for-virus-research/weeSAM): tool that provides you with coverage statistics;
-- `environment.yaml`: list of tools that will be installed by conda when you create a new environment;
+- `ref_assembly.py`: python script that does the reference-guided assembly;
+- `environment.yaml`: list of required tools and dependencies;
 - `example_dataset`: test dataset.
 
 This folder should be the place where you run your analysis.
 
-### 3. create a new conda environment
+### 3. create a conda environment
 
 To perform the reference-guided assembly you need to install several bioinformatic tools and their dependencies.
 This command creates a new conda environment called `yac_assembly`, downloads and installs all required tools (make sure that Miniconda is installed).
@@ -34,6 +33,15 @@ cd ./yac_assembly
 conda activate
 conda env create -f environment.yml
 ```
+
+### 4. install [weeSAM](https://github.com/centre-for-virus-research/weeSAM)
+
+weeSAM is a bioinformatic tool that provides you some basic statistics (number of reads mapped to the reference sequence, coverage, depth, etc.).
+
+```bash
+git clone https://github.com/centre-for-virus-research/weeSAM.git 
+```
+
 
 ## running procedure
 
@@ -51,6 +59,8 @@ conda activate yac_assembly
 Inside the `yac_assembly` folder make two additional folder:
 - a folder for the reference seqence (eg. `reference`). It should contain a single file of your reference sequence in the FASTA format (eg. `yac-a_ref.fasta`).
 - a folder with one or more raw reads files (eg. `raw_reads`). It should contain all FASTQ files that you want to align to the reference sequence (eg. `yac-a_sample1.fast1`, `yac_a_sample2.fastq`, etc.).
+
+Examples of the `reference` and `raw_reads` folders with FASTA and FASTQ files can be found in the `example_dataset` folder.
 
 ### 3. run `ref_assembly.py` script
 
