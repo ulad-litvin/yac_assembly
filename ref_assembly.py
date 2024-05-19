@@ -27,21 +27,27 @@ Assigning the reference sequence
 """
 
 try:
-    ref_seq_folder = sys.argv[1]
-    ref_seq_file = [f for f in os.listdir(ref_seq_folder) if f.endswith('.fasta')]
-    
-    if len(ref_seq_file) == 0:
+
+    ref_seq_path = sys.argv[1]
+
+    ref_seq_name = ref_seq_path.split('/')[-1]
+
+    if not os.path.exists(ref_seq_path):
+        print("The reference sequence file does not exist.")
+        sys.exit(1)
+
+    if not (ref_seq_path.endswith('.fasta') or ref_seq_path.endswith('.fa') or ref_seq_path.endswith('.fna')):
         print("No FASTA files found in the reference sequence folder.")
         sys.exit(1)
-    
-    if len(ref_seq_file) > 1:
-        print("Multiple FASTA files found in the reference sequence folder.\nPlease provide only one FASTA file per reference sequence.")
-        sys.exit(1)
-    
-    ref_seq_path = os.path.join(ref_seq_folder, ref_seq_file[0])
+
+    ref_seq_folder = './reference'
+    os.makedirs(ref_seq_folder, exist_ok=True)
+    shutil.copy(ref_seq_path, ref_seq_folder)
+
+    ref_seq_path = os.path.join(ref_seq_folder, ref_seq_name)
 
 except IndexError:
-    print("Please provide the folder with your reference sequence.")
+    print("Please provide the reference sequence file.")
     sys.exit(1)
 
 
