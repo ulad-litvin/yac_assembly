@@ -59,24 +59,31 @@ Otherwise your computer assumes that tools used in the script are not installed.
 conda activate yac_assembly
 ```
 
-### 2. make folders with reference sequence and raw reads
+### 2. reference sequence and a folder with raw reads
 
-Inside the `yac_assembly` folder make two additional folder:
-- a folder for the reference seqence (eg. `reference`). It should contain a single file of your reference sequence in the FASTA format (eg. `yac-a_ref.fasta`).
-- a folder with one or more raw reads files (eg. `raw_reads`). It should contain all FASTQ files that you want to align to the reference sequence (eg. `yac-a_sample1.fast1`, `yac_a_sample2.fastq`, etc.).
+Inside the `yac_assembly` folder:
+- have a file with the reference seqence. It should be in the FASTA format (eg. `yac-a_ref.fasta`).
+- have a folder with one or more raw reads files (eg. `raw_reads`). It should contain all FASTQ files that you want to align to the reference sequence (eg. `yac-a_sample1.fast1`, `yac_a_sample2.fastq`, etc.).
 
-Examples of the `reference` and `raw_reads` folders with FASTA and FASTQ files can be found in the `example_dataset` folder.
+Examples of the `yac-a_ref.fasta` and `raw_reads` folders with FASTA and FASTQ files can be found in the `example_dataset` folder.
 
 ### 3. run `ref_assembly.py` script
 
 `ref_assembly.py` script can produce consensus sequences for multiple raw reads files by aligning them to the same reference sequence.
 
 You need to provide two arguments:
-- a folder with your reference sequence (eg. `reference`)
+- a file with your reference sequence (eg. `yac-a_ref.fasta`)
 - a folder with raw reads (eg. `raw_reads`).
 
 Optionally you can provide a folder name where consesus sequences will be stored (by default `ref_assembly.py` creates a folder called `results`).
 
 ```bash
-python ref_assembly.py ./reference ./raw_reads ./results
+python ref_assembly.py ./yac-a_ref.fasta ./raw_reads ./results
 ```
+
+
+## results
+
+`ref_assembly.py` script creates:
+- a folder called `results` with consensus sequences for `raw_reads`.
+- a folder called `_html_results` with html and svg files with some basic statistics on consensus sequences.
